@@ -15,13 +15,12 @@ class CreateUserAddresses extends Migration
     {
         Schema::create('address', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('address_name');
-            $table->string('stret');
+            $table->string('name')->unique();
+            $table->string('street')->nullable();
             $table->string('city');
             $table->string('area');
-            $table->string('house');
-            $table->text('additional_information');
-            $table->timestamp('created_at')->nullable();
+            $table->string('house')->nullable();
+            $table->text('additional_information')->nullable();
         });
     }
 
@@ -32,6 +31,6 @@ class CreateUserAddresses extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('address');
     }
 }
