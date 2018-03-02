@@ -27,4 +27,4 @@ php artisan key:generate
 php artisan migrate
 ```
 
-Installation complete!
+Installation complete! :clap:
